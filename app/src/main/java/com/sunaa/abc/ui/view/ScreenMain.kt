@@ -11,6 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.game.newsapplication.coordinator.CoordinatorViewModel
@@ -18,14 +19,17 @@ import com.game.newsapplication.coordinator.NavCoordinator
 import com.game.newsapplication.coordinator.NavInfo
 import com.game.newsapplication.coordinator.ScreenBottomBarView
 import com.game.newsapplication.coordinator.ScreenTopBarView
+import com.sunaa.abc.R
+import com.sunaa.abc.coordinator.menu.MenuViewModel
 import com.sunaa.abc.ui.theme.ABCTheme
 
 @Composable
 fun ScreenMainView(
-    coordinatorViewModel: CoordinatorViewModel = viewModel()
+    coordinatorViewModel: CoordinatorViewModel = viewModel(),
+    menuViewModel: MenuViewModel
 ) {
 
-    val isDarkTheme by coordinatorViewModel.appThemeIsDark.collectAsState()
+    val isDarkTheme by menuViewModel.appThemeIsDark.collectAsState()
     ABCTheme(isDarkTheme) {
         val navController = rememberNavController()
         val coordinator: NavCoordinator = remember { NavCoordinator(navController) }
@@ -51,7 +55,7 @@ fun ScreenAuthorView() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Author")
+        Text(text = stringResource(R.string.author))
     }
 }
 
@@ -62,9 +66,10 @@ fun ScreenReviewView() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Reviews")
+        Text(text = stringResource(id = R.string.review))
     }
 }
+
 @Composable
 fun ScreenBooksView() {
     Column(
@@ -72,6 +77,6 @@ fun ScreenBooksView() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Books")
+        Text(text = stringResource(R.string.book))
     }
 }

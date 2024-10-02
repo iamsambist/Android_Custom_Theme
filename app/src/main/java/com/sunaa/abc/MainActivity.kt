@@ -4,22 +4,22 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.sunaa.abc.ui.theme.ABCTheme
+import androidx.lifecycle.ViewModelProvider
+import com.game.newsapplication.coordinator.CoordinatorViewModel
+import com.sunaa.abc.coordinator.language.LocaleRepository
+import com.sunaa.abc.coordinator.menu.MenuViewModel
+import com.sunaa.abc.coordinator.menu.MenuViewModelFactory
 import com.sunaa.abc.ui.view.ScreenMainView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val localeRepository = LocaleRepository(this )
+        val menuViewModel = ViewModelProvider(this, MenuViewModelFactory(localeRepository))
+            .get(MenuViewModel::class.java)
         enableEdgeToEdge()
         setContent {
-         ScreenMainView()
+            ScreenMainView(menuViewModel = menuViewModel)
         }
     }
 }

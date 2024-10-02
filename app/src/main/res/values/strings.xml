@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">ABC</string>
+    <string name="author">Authors</string>
+    <string name="book">Books</string>
+    <string name="review">Reviews</string>
+    <string name="nav_book">Books</string>
+    <string name="nav_author">Authors</string>
+    <string name="nav_review">Reviews</string>
+
+    <string name="appbar_book">Books</string>
+    <string name="appbar_author">Authors</string>
+    <string name="appbar_review">Reviews</string>
+
+    // Menu String
+    <string name="mode">Dark Mode</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="language">Languages</string>
+        <string name="lanen">ENGLISH</string>
+        <string name="lanjp">JAPANESE</string>
+    <string name="exit">Exit Application</string>
+
+
 </resources>

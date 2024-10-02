@@ -74,4 +74,7 @@ dependencies {
 
     // View Model Dependency
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+
+    // jetpack Compose animation library
+    implementation ("androidx.compose.animation:animation:1.3.0")
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ABC</string>
+    <string name="author">著者</string>
+    <string name="book">本</string>
+    <string name="review">レビュー</string>
+    <string name="nav_book">本</string>
+    <string name="nav_author">著者</string>
+    <string name="nav_review">レビュー</string>
+
+    <string name="appbar_book">本</string>
+    <string name="appbar_author">著者</string>
+    <string name="appbar_review">レビュー</string>
+
+    // Menu String
+    <string name="mode">ダークモード</string>
+    <string name="enable">有効にする</string>
+    <string name="disable">無効にする</string>
+    <string name="language">言語</string>
+         <string name="lanen">英語</string>
+         <string name="lanjp">日本語</string>
+    <string name="exit">アプリケーションを終了する</string>
+</resources>

@@ -16,12 +16,13 @@ import com.sunaa.abc.ui.view.ScreenReviewView
 
 enum class NavInfo(
     val route: String,
-    val navItemName: String,
-    val iconId: Int
+    val navItemName: Int,
+    val iconId: Int,
+    val appBarTextId: Int
 ) {
-    BOOKS("books", "Books", R.drawable.nav_books),
-    AUTHORS("authors", "Authors", R.drawable.nav_author),
-    REVIEWS("reviews", "Reviews", R.drawable.nav_reviews)
+    BOOKS("books", R.string.nav_book, R.drawable.nav_books, R.string.appbar_book),
+    AUTHORS("authors", R.string.nav_author, R.drawable.nav_author, R.string.appbar_author),
+    REVIEWS("reviews", R.string.nav_review, R.drawable.nav_reviews, R.string.appbar_review)
 }
 
 class NavCoordinator(
@@ -31,7 +32,7 @@ class NavCoordinator(
 
     fun navigateTo(route: String) {
         routeName = route
-        navController.navigate(route){
+        navController.navigate(route) {
             // This ensures the back stack is cleared up to the home screen
             popUpTo(NavInfo.BOOKS.route) {
                 inclusive = false // Keeps the home screen in the back stack

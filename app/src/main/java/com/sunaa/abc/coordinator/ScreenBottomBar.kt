@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
@@ -31,7 +32,7 @@ fun ScreenBottomBarView(
                 selected = isSelected,
                 onClick = {
                     if (!isSelected) {
-                        coordinatorViewModel.updateText(navInfo.navItemName)
+                        coordinatorViewModel.updateText(navInfo.appBarTextId)
                         coordinator.navigateTo(navInfo.route)
                     }
                 },
@@ -42,7 +43,7 @@ fun ScreenBottomBarView(
                     )
                 },
                 label = {
-                    Text(text = navInfo.navItemName)
+                    Text(text = stringResource(navInfo.navItemName))
                 },
                 alwaysShowLabel = false
             )
